@@ -32,9 +32,9 @@ isn't ready yet, the CLI:
 ```
 $ time mgrep "where is the biomarker neural network architecture defined?" --top 3 --no-content
 
-=== /Users/tian/ANM/docs/companion_notes/active_neural_matter_companion_note.tex:14-37 (score: 0.800) ===
-=== /Users/tian/ANM/docs/plans/2026-04-20-nature-physics-closure-plan.md:138-161 (score: 0.800) ===
-=== /Users/tian/ANM/.../civic_raw_pool.json:760-783 (score: 0.800) ===
+=== /Users/tian/repo-B/docs/companion_notes/active_neural_matter_companion_note.tex:14-37 (score: 0.800) ===
+=== /Users/tian/repo-B/docs/plans/2026-04-20-nature-physics-closure-plan.md:138-161 (score: 0.800) ===
+=== /Users/tian/repo-B/.../civic_raw_pool.json:760-783 (score: 0.800) ===
 
 [0.672s · ripgrep fallback · semantic index building in background]
 real    0m1.505s
@@ -78,8 +78,8 @@ same query again in a minute, or run `mgrep stats` to see progress.
 running tally even while the indexer is mid-run:
 
 ```
-DB:           /Users/.../local-mgrep/repos/ANM-21aa34e5.db
-Project root: /Users/.../ANM
+DB:           /Users/.../local-mgrep/repos/repo-B-21aa34e5.db
+Project root: /Users/.../repo-B
 Total chunks: 198
 Total files:  6
 ```

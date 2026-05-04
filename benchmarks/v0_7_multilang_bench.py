@@ -1,10 +1,10 @@
 """v0.7.0 multi-language layered benchmark.
 
-Generalizes the v0.5 warp 16-task benchmark to three languages:
+Generalizes the v0.5 repo-A 16-task benchmark to three languages:
 
-    * Rust    — warp                     (16 tasks, /tmp/warp_idx_p1.db legacy DB)
-    * Python  — ANM                      (12 tasks, per-project DB)
-    * TypeScript — claude-code-source-build (12 tasks, per-project DB)
+    * Rust    — repo-A                     (16 tasks, /tmp/warp_idx_p1.db legacy DB)
+    * Python  — repo-B                      (12 tasks, per-project DB)
+    * TypeScript — repo-C (12 tasks, per-project DB)
 
 For each repo we run the same Tier A/B/C/D cascade as v0.5_warp_bench
 (cascade only, +L2 symbol boost, +L4 graph tiebreaker, full 0.5.0) and report
@@ -49,31 +49,31 @@ class Bench:
     name: str
     tasks_path: Path
     repo_path: Path
-    db_path: Path  # explicit DB path (per-project for new benches, legacy for warp)
+    db_path: Path  # explicit DB path (per-project for new benches, legacy for repo-A)
 
 
-# Warp keeps its legacy /tmp index built under nomic-embed-text in earlier
-# P-phases. ANM and CCSB use the standard per-project DB derived from
+# Repo-A keeps its legacy /tmp index built under nomic-embed-text in earlier
+# P-phases. repo-B and Repo-C use the standard per-project DB derived from
 # ``project_db_path``.
 BENCHES: list[Bench] = [
     Bench(
-        name="warp (Rust)",
-        tasks_path=REPO_ROOT / "benchmarks/cross_repo/warp.json",
-        repo_path=Path("/Users/tianchichen/Documents/github/warp"),
+        name="repo-A (Rust)",
+        tasks_path=REPO_ROOT / "benchmarks/cross_repo/repo-a.json",
+        repo_path=Path("/path/to/repo-A"),
         db_path=Path("/tmp/warp_idx_p1.db"),
     ),
     Bench(
-        name="ANM (Python)",
-        tasks_path=REPO_ROOT / "benchmarks/cross_repo/anm.json",
-        repo_path=Path("/Users/tianchichen/Documents/GitHub/ANM"),
-        db_path=project_db_path(Path("/Users/tianchichen/Documents/GitHub/ANM")),
+        name="repo-B (Python)",
+        tasks_path=REPO_ROOT / "benchmarks/cross_repo/repo-b.json",
+        repo_path=Path("/Users/tianchichen/Documents/GitHub/repo-B"),
+        db_path=project_db_path(Path("/Users/tianchichen/Documents/GitHub/repo-B")),
     ),
     Bench(
-        name="claude-code-source-build (TypeScript)",
-        tasks_path=REPO_ROOT / "benchmarks/cross_repo/ccsb.json",
-        repo_path=Path("/Users/tianchichen/Documents/GitHub/claude-code-source-build"),
+        name="repo-C (TypeScript)",
+        tasks_path=REPO_ROOT / "benchmarks/cross_repo/repo-c.json",
+        repo_path=Path("/Users/tianchichen/Documents/GitHub/repo-C"),
         db_path=project_db_path(
-            Path("/Users/tianchichen/Documents/GitHub/claude-code-source-build")
+            Path("/Users/tianchichen/Documents/GitHub/repo-C")
         ),
     ),
 ]

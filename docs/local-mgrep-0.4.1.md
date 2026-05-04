@@ -32,9 +32,9 @@ isn't ready yet, the CLI:
 ```
 $ time mgrep "where is the biomarker neural network architecture defined?" --top 3 --no-content
 
-=== /Users/tian/repo-B/docs/companion_notes/active_neural_matter_companion_note.tex:14-37 (score: 0.800) ===
-=== /Users/tian/repo-B/docs/plans/2026-04-20-nature-physics-closure-plan.md:138-161 (score: 0.800) ===
-=== /Users/tian/repo-B/.../civic_raw_pool.json:760-783 (score: 0.800) ===
+=== /path/to/repo-B/docs/companion_notes/repo-B_companion_note.tex:14-37 (score: 0.800) ===
+=== /path/to/repo-B/docs/plans/2026-04-20-nature-physics-closure-plan.md:138-161 (score: 0.800) ===
+=== /path/to/repo-B/.../civic_raw_pool.json:760-783 (score: 0.800) ===
 
 [0.672s · ripgrep fallback · semantic index building in background]
 real    0m1.505s
